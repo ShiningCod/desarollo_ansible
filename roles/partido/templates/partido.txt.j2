@@ -1,0 +1,19 @@
+** INFORMACION DEL PARTIDO UNIR **
+
+First Name: {{ first_name }}.
+Last Name: {{ last_name }}.
+City: {{ city }}.
+id: {{ id }}.
+
+{% set parsed = json.content | from_json %}
+{% if parsed.results is defined and parsed.results | length > 0 %}
+{% set user = parsed.results[0] %}
+First Name:  {{ user.name.first }}.
+Last Name: {{ user.name.last }}.
+City: {{ user.location.city }}.
+id: {{ user.login.uuid }}.
+{% else %}
+ERROR: No se pudo obtener el segundo jugador.
+{% endif %}
+
+Fecha: {{ fecha.stdout }}.

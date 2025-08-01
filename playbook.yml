@@ -1,0 +1,9 @@
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    first_name: Aitor
+    last_name: Menta
+    city: Madrid
+  roles:
+    - partido

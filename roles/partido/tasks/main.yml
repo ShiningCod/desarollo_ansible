@@ -1,0 +1,29 @@
+- name: Incluir variables del primer jugador
+  include_vars: vars/partido_vars.yml
+
+- name: Obtener información del segundo jugador desde randomuser.me
+  uri:
+    url: "https://randomuser.me/api/"
+    return_content: yes
+  register: json
+
+- name: Mostrar JSON recibido de la API
+  debug:
+    msg: "{{ json.content }}"
+
+- name: Obtener fecha actual
+  command: date -Iseconds
+  register: fecha
+
+- name: Crear fichero partido.txt
+  template:
+    src: partido.txt.j2
+    dest: /home/ubuntu/partido.txt
+
+- name: Mostrar el contenido del fichero
+  command: cat /home/ubuntu/partido.txt
+  register: salida
+
+- name: Mostrar por pantalla
+  debug:
+    msg: "{{ salida.stdout }}"
