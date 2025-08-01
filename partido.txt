@@ -1,0 +1,13 @@
+** INFORMACION DEL PARTIDO UNIR **
+
+First Name: Aitor.
+Last Name: Menta.
+City: Madrid.
+id: 1234.
+
+First Name:  Rumeysa.
+Last Name: Roording.
+City: Bern.
+id: c9f0fb1a-fa52-4df6-8644-d78f873a7ba7.
+
+Fecha: 2025-08-01T04:17:58+00:00.
